@@ -1,4 +1,5 @@
 pip install yfinance
+del prediction.txt
 python ATR.py
 python BollingerBands.py
 python FibonacciRetracementLevels.py
