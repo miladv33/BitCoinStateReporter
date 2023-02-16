@@ -10,5 +10,7 @@ python OBV.py
 python RSI.py
 python StochasticOscillator.py
 python WilliamsR.py
+git add .
+git commit -m "updated"
 git push
 @echo off
