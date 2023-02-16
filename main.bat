@@ -1,5 +1,5 @@
 pip install yfinance
-del prediction.txt
+del README.md
 python ATR.py
 python BollingerBands.py
 python FibonacciRetracementLevels.py
@@ -10,9 +10,5 @@ python OBV.py
 python RSI.py
 python StochasticOscillator.py
 python WilliamsR.py
-
+git push
 @echo off
-echo This is a batch file.
-pause
-echo This is a log entry. >> prediction.log
-echo This is some output that will be saved to the log file. >> prediction.log

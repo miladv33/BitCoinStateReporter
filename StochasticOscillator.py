@@ -38,5 +38,5 @@ report = f"Based on Stochastic Oscillator indicators, the current trend is {tren
 The sentiment is {sentiment}, which means that there is a positive outlook.\n ------------------------------\n"
 
 # Save the report to a file
-with open("prediction.txt", "a") as file:
+with open("README.md", "a") as file:
     file.write(report)

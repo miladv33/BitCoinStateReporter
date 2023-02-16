@@ -42,5 +42,5 @@ else:
 report = f"Based on Fibonacci Retracement Levels indicators, the current trend is {trend}, which means that the price is expected to go {'up' if trend == 'Bullish' else 'down'}. The sentiment is {sentiment}, which means that there is a {'positive' if sentiment == 'Positive' else 'neutral'} outlook.\n ------------------------------\n"
 
 # Save the report to a file
-with open("prediction.txt", "a") as file:
+with open("README.md", "a") as file:
     file.write(report)
