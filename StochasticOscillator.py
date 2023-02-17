@@ -8,7 +8,7 @@ class StochasticOscillator:
         self.d_period = d_period
     
     # Calculate the Stochastic Oscillator indicator
-    def calculate(self):
+    def calculate_trend_sentiment(self):
         high_max = self.data['High'].rolling(window=self.k_period).max()
         low_min = self.data['Low'].rolling(window=self.k_period).min()
         close = self.data['Close']

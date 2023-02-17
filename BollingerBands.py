@@ -8,7 +8,7 @@ class BoillingerBands:
         self.data = pd.DataFrame(self.bitcoin['Close'])
 
     # Calculate the Bollinger Bands indicator
-    def calculate(self):
+    def calculate_trend_sentiment(self):
         n = 20  # Number of days for the moving average
         k = 2  # Number of standard deviations for the bands
         rolling_mean = self.data['Close'].rolling(window=n).mean()

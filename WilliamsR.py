@@ -22,7 +22,7 @@ class WilliamsR:
 
     def determine_trend(self):
         # Determine the current trend based on the Williams %R indicator
-        if self.williams_r_data['Williams %R'].iloc[-1] < -80:
+        if len(self.williams_r_data) > 0 and self.williams_r_data['Williams %R'].iloc[-1] < -80:
             trend = 'Bullish'
         else:
             trend = 'Bearish'
@@ -36,7 +36,7 @@ class WilliamsR:
             sentiment = 'Neutral'
         return sentiment
 
-    def generate_report(self):
+    def calculate_trend_sentiment(self):
         trend = self.determine_trend()
         sentiment = self.determine_sentiment()
 

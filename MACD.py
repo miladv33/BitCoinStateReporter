@@ -6,7 +6,7 @@ class MACD:
         # Load the data from Yahoo Finance into a pandas DataFrame
         self.data = yf.download(symbol, period="max", interval=timeframe)
         
-    def calculate(self, slow=26, fast=12, signal=9):
+    def calculate_trend_sentiment(self, slow=26, fast=12, signal=9):
         # Calculate the MACD for the loaded data
         exp1 = self.data['Close'].ewm(span=fast, adjust=False).mean()
         exp2 = self.data['Close'].ewm(span=slow, adjust=False).mean()

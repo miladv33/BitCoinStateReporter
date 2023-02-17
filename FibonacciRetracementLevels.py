@@ -22,7 +22,7 @@ class FibonacciRetracementLevels:
             self.low_price
         ]
 
-    def calculate(self):
+    def calculate_trend_sentiment(self):
         # Determine the current trend based on the Fibonacci retracement levels
         if self.start_price > self.fibonacci_levels[3]:
             trend = 'Bullish'

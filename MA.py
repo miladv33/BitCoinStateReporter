@@ -8,7 +8,7 @@ class MovingAverage:
         self.data = pd.DataFrame(self.bitcoin['Close'])
 
     # Calculate the moving averages and determine the trend and sentiment
-    def calculate(self):
+    def calculate_trend_sentiment(self):
         ma_20 = self.data['Close'].rolling(window=20).mean()
         ma_50 = self.data['Close'].rolling(window=50).mean()
 
