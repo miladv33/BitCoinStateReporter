@@ -35,7 +35,7 @@ OBV_report = obv.generate_report()
 rsi = RSI.RSI(symbol=symbol, timeframe=timeframe)
 rsi_report = rsi.calculate_trend_sentiment()
 
-stoch = StochasticOscillator.StochasticOscillator(symbol=symbol)
+stoch = StochasticOscillator.StochasticOscillator(symbol=symbol, interval = timeframe)
 stoch_report = stoch.calculate()
 
 wr = WilliamsR.WilliamsR(symbol=symbol, timeframe=timeframe, period=14)
