@@ -2,38 +2,38 @@
 
 ## BoillingerBands
 
-🔺 Neutral / 🤏 Positive
+🔺 Neutral / 👍 Positive
 
 ## FibonacciRetracementLevels
 
-🔺 Bullish / 🤏 Positive
+📈 Bullish / 👍 Positive
 
 ## MovingAverage
 
-🔺 Bullish / 🤏 Positive
+📈 Bullish / 👍 Positive
 
 ## MACD
 
-🔺 Bearish / 🤏 Positive
+📉 Bearish / 👍 Positive
 
 ## OBV
 
-🔺 Bullish / 🤏 Negative
+📈 Bullish / 👎 Negative
 
 ## RSI
 
-🔺 Bullish / 🤏 Positive
+📈 Bullish / 👍 Positive
 
 ## StochasticOscillator
 
-🔺 Bullish / 🤏 Very positive
+📈 Bullish / 👍 Very positive
 
 ## WilliamsR
 
-🔺 Bearish / 🤏 Positive
+📉 Bearish / 👍 Positive
 
 
 
 ## Analysis
 
-The majority of indicators are bullish, which suggests that BTC-USD may be headed for a period of growth.
+The indicators are evenly split between bullish and bearish, so it's difficult to make a prediction about the future direction of BTC-USD.

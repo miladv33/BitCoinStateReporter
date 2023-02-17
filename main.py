@@ -29,19 +29,20 @@ def format_result(result):
     trend = result[0]
     sentiment = result[1]
 
-    if trend == "up":
+    if trend == "Bullish":
         trend_icon = "📈"
-    elif trend == "down":
+    elif trend == "Bearish":
         trend_icon = "📉"
     else:
         trend_icon = "🔺"
 
-    if sentiment == "positive":
+    if "Positive" in sentiment:
         sentiment_icon = "👍"
-    elif sentiment == "negative":
+    elif "Negative" in sentiment:
         sentiment_icon = "👎"
     else:
         sentiment_icon = "🤏"
+
 
     return f"{trend_icon} {trend.capitalize()} / {sentiment_icon} {sentiment.capitalize()}"
 
