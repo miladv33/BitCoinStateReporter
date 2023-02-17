@@ -38,9 +38,3 @@ class OBV:
             sentiment = "Negative"
 
         return trend, sentiment
-
-    def generate_report(self):
-        trend, sentiment = self.calculate_trend_sentiment()
-        report = f"Based on OBV indicators, the current trend is {trend}, which means that the price is expected to go {'up' if trend == 'Bullish' else 'down'}.\n\
-The sentiment is {sentiment}, which means that there is a {'positive' if sentiment == 'Positive' else 'negative'} outlook.\n ------------------------------\n"
-        return report

@@ -33,8 +33,4 @@ class StochasticOscillator:
         else:
             sentiment = "Negative"
 
-        # Generate the report
-        report = f"Based on Stochastic Oscillator indicators for {self.k_period} and {self.d_period} periods on {self.data.index[-1].date()} ({self.data.index[-1].strftime('%H:%M:%S')}), the current trend is {trend}, which means that the price is expected to go {'up' if trend == 'Bullish' else 'down'}.\n\
-        The sentiment is {sentiment}, which means that there is a {'positive' if sentiment == 'Positive' or sentiment == 'Very Positive' else 'negative' if sentiment == 'Negative' else 'neutral'} outlook.\n ------------------------------\n"
-
-        return report
+        return trend, sentiment

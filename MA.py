@@ -23,5 +23,4 @@ class MovingAverage:
             sentiment = 'Neutral'
 
         # Generate the report
-        report = f"Based on MA indicators, the current trend is {trend}, which means that the price is expected to go {'up' if trend == 'Bullish' else 'down'}. The sentiment is {sentiment}, which means that there is a {'positive' if sentiment == 'Positive' else 'neutral'} outlook.\n ------------------------------\n"
-        return report
+        return trend, sentiment
