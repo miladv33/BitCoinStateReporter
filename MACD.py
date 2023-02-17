@@ -1,38 +1,35 @@
 import pandas as pd
 import yfinance as yf
 
-# Download the daily price data for Bitcoin
-btc_data = yf.download("BTC-USD", period="max", interval="1d")
+class MACD:
+    def __init__(self, symbol, timeframe):
+        # Load the data from Yahoo Finance into a pandas DataFrame
+        self.data = yf.download(symbol, period="max", interval=timeframe)
+        
+    def calculate(self, slow=26, fast=12, signal=9):
+        # Calculate the MACD for the loaded data
+        exp1 = self.data['Close'].ewm(span=fast, adjust=False).mean()
+        exp2 = self.data['Close'].ewm(span=slow, adjust=False).mean()
+        macd = exp1 - exp2
+        signal_line = macd.ewm(span=signal, adjust=False).mean()
+        histogram = macd - signal_line
+        
+        # Determine the current trend and sentiment based on MACD
+        last_macd = macd[-1]
+        last_signal = signal_line[-1]
 
-# Calculate the MACD for Bitcoin
-def calculate_macd(data, slow=26, fast=12, signal=9):
-    exp1 = data['Close'].ewm(span=fast, adjust=False).mean()
-    exp2 = data['Close'].ewm(span=slow, adjust=False).mean()
-    macd = exp1 - exp2
-    signal_line = macd.ewm(span=signal, adjust=False).mean()
-    histogram = macd - signal_line
-    return macd, signal_line, histogram
+        if last_macd > last_signal:
+            trend = "Bullish"
+        else:
+            trend = "Bearish"
 
-btc_macd, btc_signal, btc_histogram = calculate_macd(btc_data, 26, 12, 9)
+        if last_macd > 0:
+            sentiment = "Positive"
+        else:
+            sentiment = "Negative"
 
-# Determine the current trend and sentiment based on MACD
-last_macd = btc_macd[-1]
-last_signal = btc_signal[-1]
-
-if last_macd > last_signal:
-    trend = "Bullish"
-else:
-    trend = "Bearish"
-    
-if last_macd > 0:
-    sentiment = "Positive"
-else:
-    sentiment = "Negative"
-
-# Generate the report
-report = f"Based on MACD indicators, the current trend is {trend}, which means that the price is expected to go up.\n\
-The sentiment is {sentiment}, which means that there is a positive outlook.\n ------------------------------\n"
-
-# Save the report to a file
-with open("README.md", "a") as file:
-    file.write(report)
+        # Generate the report
+        report = f"Based on MACD indicators, the current trend is {trend}, which means that the price is expected to go {'up' if trend == 'Bullish' else 'down'}.\n\
+        The sentiment is {sentiment}, which means that there is a {'positive' if sentiment == 'Positive' else 'negative'} outlook.\n ------------------------------\n"
+        
+        return report
