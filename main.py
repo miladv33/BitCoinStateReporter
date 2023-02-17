@@ -55,10 +55,11 @@ def generate_report_with_analysis():
     bearish_indicators = 0
     
     for line in report.split("\n"):
-        if "🔺 Bullish" in line:
-            bullish_indicators += 1
-        elif "🔺 Bearish" in line:
-            bearish_indicators += 1
+       if "🔺 Bullish" in line:
+           bullish_indicators += 1
+       elif "🔺 Bearish" in line:
+           bearish_indicators += 1
+           line = line.replace("🔺", "🔻")
     
     if bullish_indicators == bearish_indicators:
         analysis = "The indicators are evenly split between bullish and bearish, so it's difficult to make a prediction about the future direction of BTC-USD."
